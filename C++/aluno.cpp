@@ -37,7 +37,7 @@ int main (){
      
     cout << "Situação dos alunos:\n\n" ;
      for (i = 0; i < quantidadeAlunos; i++){
-        aluno[i].passou = aluno[i].media > 7 ? true : false;
+        aluno[i].passou = aluno[i].media >= 7 ? true : false;
         cout << "Aluno: " << aluno[i].nome << endl;
         if(aluno[i].passou){
             cout << "Aprovado \n";
