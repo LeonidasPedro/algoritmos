@@ -9,7 +9,7 @@ struct Funcionario{
     double salarioFixo;
     double vendasEfetuadas;
     double salarioTotal;
-};
+}
 
 double calculaSalarioTotal(double salario, double vendas);
 
