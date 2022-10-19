@@ -19,7 +19,7 @@ int main(void)
     printf("\n\n\n");
     node *raiz = NULL;
     raiz = (node *)malloc(sizeof(node *));
-    raiz->valor = NULL;
+    raiz->valor = 1;
     raiz->proximo = NULL;
 
     // Mostrando a lista.
@@ -79,4 +79,19 @@ void imprimePilha(node *raiz)
     }
     else
         printf("Pilha vazia.\n\n");
+}
+
+void insereElemento(node *raiz, int info){
+  Node *insercao = NULL;
+  insercao = (node *)malloc(sizeof(node *));
+  insercao->valor = info;
+  insercao->proximo = raiz->proximo;
+  raiz->proximo = insercao;
+}
+
+void removeElemento(node *raiz){
+    Node *remocao = NULL;
+    remocao = raiz->proximo;
+    raiz->proximo = remocao->proximo;
+    free(remocao);
 }
