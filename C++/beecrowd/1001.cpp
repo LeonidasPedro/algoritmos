@@ -1,4 +1,3 @@
-//make uri 1001 in c++
 #include <iostream>
 using namespace std;
 int main() {
