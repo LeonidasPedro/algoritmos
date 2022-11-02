@@ -50,14 +50,14 @@ int main(void){
                 break;
             case 2:
                 if(raiz){
-                    decolagem(raiz)
+                    decolagem(raiz);
                 }
                 break;
             case 3:
                 cout << "Digite a bandeira do avião:" << endl;
                 cin >> bandeira;
                 cout << "Digite a quantidade de passageiros do avião" << endl;
-                cin << contPassageiros;
+                cin >> contPassageiros;
                 cout << "Digite o número do avião" << endl;
                 cin >> numeroAviao;
                 adicionarFila(raiz, bandeira, numeroAviao, contPassageiros);
@@ -86,3 +86,42 @@ int main(void){
 
 }
 
+// void displayLL(node *p)//Mostra a lista
+// {
+//     p = p->proximo;
+//     printf("Mostrando a fila:\n");
+//     if (p)
+//     {
+//         do
+//         {//insere sermpre no final da lista.
+//             printf(" %d", p->valor);
+//             p = p->proximo;
+//         } while (p);
+//         printf("\n\n");
+//     }
+//     else
+//         printf("Fila vazia.\n\n");
+// }
+
+void numeroAvioes(aviao *raiz){
+    aviao *temp = raiz->proximo;
+    int contador = 0;
+
+    while (temp)
+    {
+    temp = temp->proximo;
+        contador++;
+    }
+    cout << contador << " aviões na fila." << endl;
+}
+
+// void remove_no_inicio(node *raiz){
+//     node *remocao = raiz->proximo;
+//     raiz->proximo = remocao->proximo;
+//     free(remocao);
+// }
+
+void decolagem(aviao *raiz){
+
+
+}
