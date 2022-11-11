@@ -1,8 +1,3 @@
-/*Construa um método que recebe uma fila de números inteiros e retorna uma fila sem
-repetições, ou seja, uma fila onde cada número aparece apenas uma vez.
-Exemplo: 12 5 -7 8 5 9 12 1 8 → 12 5 -7 8 9 1
-*/
-
 #include <iostream>
 #include <string>
 
@@ -52,6 +47,7 @@ int main(void){
                 break;
         }
     }
+    free(raiz);
 };
 
 void adicionarFila(fila *raiz, int numero){
@@ -60,18 +56,18 @@ void adicionarFila(fila *raiz, int numero){
     novo->numero = numero;
     novo->proximo = NULL;
 
-    fila *aux = raiz;
-    while (aux->proximo){
-        aux = aux->proximo;
+    fila *p = raiz;
+    while (p->proximo){
+        p = p->proximo;
     }
-    aux->proximo = novo;
+    p->proximo = novo;
 }
 
 void listarFila(fila *raiz){
-    fila *aux = raiz;
-    while (aux->proximo){
-        aux = aux->proximo;
-        cout << aux->numero << endl;
+    fila *p = raiz;
+    while (p->proximo){
+        p = p->proximo;
+        cout << "Numeros da fila: " << p->numero << endl;
     }
 }
 
@@ -79,15 +75,15 @@ void listarFila(fila *raiz){
 void removerRepetidos(fila *raiz){
    fila *x = raiz;//x é o primeiro elemento da fila
     fila *y = NULL;//y é o segundo elemento da fila
-    fila *aux = NULL;//aux é o elemento que será removido da fila
+    fila *remocao = NULL;//remocao é o elemento que será removido da fila
 
     while (x && x->proximo){ //enquanto x e o próximo elemento de x existirem
         y = x;//y recebe o valor de x
         while (y->proximo){//enquanto o próximo elemento de y existir
             if (x->numero == y->proximo->numero){//se o número de x for igual ao número do próximo elemento de y
-                aux = y->proximo;//aux recebe o próximo elemento de y
+                remocao = y->proximo;//remocao recebe o próximo elemento de y
                 y->proximo = y->proximo->proximo;//o próximo elemento de y recebe o próximo elemento do próximo elemento de y
-                free(aux);//aux é removido da fila
+                free(remocao);//aux é removido da fila
             }
             else{
                 y = y->proximo;//y recebe o próximo elemento de y
@@ -96,3 +92,4 @@ void removerRepetidos(fila *raiz){
         x = x->proximo;//x recebe o próximo elemento de x
     }
 }
+

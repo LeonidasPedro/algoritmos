@@ -24,7 +24,7 @@ int main(void){
     raiz = (aviao *)malloc(sizeof(aviao*));
     raiz->contPassageiros = 0;
     raiz->numero = 0;
-    raiz->bandeira = "                                                      ";  
+    raiz->bandeira = "                                                      ";
     raiz->proximo = NULL;
 
     int opcao = 9;
