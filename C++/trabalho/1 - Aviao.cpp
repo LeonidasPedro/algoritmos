@@ -22,14 +22,14 @@ int main(void){
 
     aviao *raiz = NULL;
     raiz = (aviao *)malloc(sizeof(aviao*));
-    raiz->bandeira = "";
     raiz->contPassageiros = 0;
     raiz->numero = 0;
+    raiz->bandeira = "                                                      ";  
     raiz->proximo = NULL;
 
-    int opcao = 99999999999999999;
+    int opcao = 9;
     int numeroAviao = 0;
-    string bandeira = "";
+    string bandeira = "                                                   ";
     int contPassageiros = 0;
     
     while (opcao != 0){
@@ -81,47 +81,62 @@ int main(void){
         }
 
     }
+    free(raiz);
 
     return 0;
 
 }
 
-// void displayLL(node *p)//Mostra a lista
-// {
-//     p = p->proximo;
-//     printf("Mostrando a fila:\n");
-//     if (p)
-//     {
-//         do
-//         {//insere sermpre no final da lista.
-//             printf(" %d", p->valor);
-//             p = p->proximo;
-//         } while (p);
-//         printf("\n\n");
-//     }
-//     else
-//         printf("Fila vazia.\n\n");
-// }
-
 void numeroAvioes(aviao *raiz){
-    aviao *temp = raiz->proximo;
+    aviao *x = raiz->proximo;
     int contador = 0;
-
-    while (temp)
+    while (x)
     {
-    temp = temp->proximo;
+    x = x->proximo;
         contador++;
     }
     cout << contador << " aviões na fila." << endl;
 }
 
-// void remove_no_inicio(node *raiz){
-//     node *remocao = raiz->proximo;
-//     raiz->proximo = remocao->proximo;
-//     free(remocao);
-// }
-
 void decolagem(aviao *raiz){
-
-
+    aviao *remocao = raiz->proximo;
+    raiz->proximo = remocao->proximo;
+    free(remocao);
 }
+
+void adicionarFila(aviao *raiz, string bandeira, int numero, int contPassageiros){
+    aviao *novo = (aviao *)malloc(sizeof(aviao*));
+    novo->bandeira = bandeira;
+    novo->contPassageiros = contPassageiros;
+    novo->numero = numero;
+    novo->proximo = NULL;
+
+    aviao *temp = raiz;
+    while (temp->proximo)
+    {
+        temp = temp->proximo;
+    }
+    temp->proximo = novo;
+}
+
+void listarFila(aviao *raiz){
+    aviao *temp = raiz->proximo;
+    int contador = 0;
+
+    while (temp)
+    {   cout << "Avião " << contador << endl;
+        cout << "Bandeira: " << temp->bandeira << endl;
+        cout << "Número: " << temp->numero << endl;
+        cout << "Passageiros: " << temp->contPassageiros << endl;
+        temp = temp->proximo;
+        contador++;
+    }
+}
+
+void primeiroAviao(aviao *raiz){
+    aviao *temp = raiz->proximo;
+    cout << "Bandeira: " << temp->bandeira << endl;
+    cout << "Número: " << temp->numero << endl;
+    cout << "Passageiros: " << temp->contPassageiros << endl;
+}
+
