@@ -1,9 +1,3 @@
-/* Implemente no método um programa que leia 15 números e proceda, para cada um deles,
-como segue:
-a. se o número for par, insira-o em uma pilha;
-b. se o número lido for ímpar, retire um elemento da pilha;
-c. Ao final, imprima os elementos da pilha*/
-
 #include <iostream>
 #include <string>
 
