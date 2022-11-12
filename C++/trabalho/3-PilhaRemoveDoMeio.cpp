@@ -25,7 +25,7 @@ int main(void){
     int numero = 0;
     
     while (opcao != 0){
-        cout << " Escolha uma opcao" << endl; 
+        cout << "\n\n Escolha uma opcao" << endl; 
         cout << "1 - Adicionar um número a pilha" << endl;
         cout << "2 - Listar todos os números da pilha" << endl;
         cout << "3 - Remover um número da pilha" << endl;
@@ -58,20 +58,24 @@ void adicionarPilha(pilha *raiz, int numero){
     novo->proximo = NULL;
 
     pilha *p = raiz;
-
+    
     while(p->proximo != NULL){
         p = p->proximo;
     }
-
     p->proximo = novo;
 };
 
 void listarPilha(pilha *raiz){
-    pilha *p = raiz;
-
-    while(p->proximo != NULL){
-        p = p->proximo;
-        cout << p->numero << endl;
+    if(raiz->proximo){
+        pilha *p = raiz->proximo;
+        int contador = 0;
+        while (p->proximo){
+            cout << "Pilha posição " << contador + 1 << ": " << p->numero << endl;
+            p = p->proximo;
+            contador++;
+        }
+    } else {
+        cout << "A pilha está vazia" << endl;
     }
 };
 
