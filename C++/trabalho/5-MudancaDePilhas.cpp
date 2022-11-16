@@ -1,7 +1,3 @@
-/*Faça um programa que leia uma pilha S1 transfira os elementos da pilha S1 para a pilha S2
-de modo que os elementos de S2 estejam na mesma ordem que em S1. Dica: Use uma pilha
-adicional para auxiliar.*/
-
 #include <iostream>
 #include <string>
 
@@ -70,7 +66,14 @@ void listarPilhas(pilha *raiz, pilha *raiz3){
     }
 
 }
-void transferirElementos(pilha *raiz, pilha *raiz2){
 
-    
+void transferirElementos(pilha *raiz, pilha *raiz2){
+    pilha *p = raiz->proximo;
+    pilha *p2 = raiz2->proximo;
+
+    while (p->proximo){
+        inserirPilha(raiz2, p->numero);
+        p = p->proximo;
+    }
+
 }
