@@ -1,5 +1,7 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -73,7 +75,7 @@ void listarFila(fila *raiz){
 
 
 void removerRepetidos(fila *raiz){
-   fila *x = raiz;//x é o primeiro elemento da fila
+    fila *x = raiz;//x é o primeiro elemento da fila
     fila *y = NULL;//y é o segundo elemento da fila
     fila *remocao = NULL;//remocao é o elemento que será removido da fila
 

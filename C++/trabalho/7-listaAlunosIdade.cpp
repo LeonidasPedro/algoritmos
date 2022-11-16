@@ -1,8 +1,7 @@
-/*Refaça o exercício anterior (Exercício 6) que crie uma lista de alunos e um valor inteiro N, e
-retira todos os alunos da lista que possuem idade menor que N.*/
-#include <iostream>
-#include <string>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
 
 
 using namespace std;
@@ -79,24 +78,6 @@ void inserirAluno(aluno *raiz, int matricula, string nome, int idade){
     p->proximo = novo;
 }
 
-// // Função para remover nó no meio
-// void removeNoMeio(node *raiz, int posicao)
-// {
-//     node *p = raiz->proximo;
-//     node *anterior = raiz;
-//     int i = 0;
-//     while (p->proximo)
-//     {
-//         anterior = p;
-//         p = p->proximo;
-//         i++;
-//         if (i == posicao)
-//             break;
-//     }
-//     anterior->proximo = p->proximo;
-//     p->proximo = NULL;
-//     free(p);
-// }
 
 void retirarAlunos(aluno *raiz, int idade){
     aluno *p = raiz;
