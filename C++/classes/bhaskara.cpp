@@ -34,8 +34,8 @@ float bhaskara::getR2() {
 }
 
 void bhaskara::setRaizes(){
-    r1 = sqrt(delta)/(2*a);
-    r2 = -sqrt(delta)/(2*a);
+    r1 = (-b + sqrt(delta))/(2*a);
+    r2 = (-b - sqrt(delta))/(2*a);
 }
 
 void bhaskara::setA(int A){
@@ -44,7 +44,7 @@ void bhaskara::setA(int A){
 
 float bhaskara::getDelta(){
     return delta;
-}
+};
 
 void bhaskara::setB(int B){
     b = B;
