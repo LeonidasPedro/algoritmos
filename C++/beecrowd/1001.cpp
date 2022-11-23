@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stiring>
+
 using namespace std;
 int main() {
     int a,b;
