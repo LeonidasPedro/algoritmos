@@ -16,7 +16,7 @@ for(let i = 1; i< 9; i++){//pula o bit inicial
 
 quantidadeDe1 % 2 == 0 ? uart1.push(0) : uart1.push(1)//adiciona o bit de paridade
 
-if(uart1[9]==0) {//bit final
+if(uart1[9]==0) {//adiciona o stop bit
     uart1[10]=1
 }else{
     uart1[10] = 0
