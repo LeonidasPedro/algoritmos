@@ -5,42 +5,46 @@
 
 using namespace std;
 
-class Imovel{
+class Imovel {
     private:
         string endereco;
         float preco;
     public:
-        void setEndereco(string novoEndereco){
-            this->endereco = novoEndereco;
-        }
-        void setPreco(float novoPreco){
-            this->preco = novoPreco;
-        }
-        string getEndereco(){
-            return this->endereco;
-        }
-        float getPreco(){
+    void setEndereco(string endereco) {
+        this->endereco = endereco;
+    }
 
-                return this->preco;
-        }
+    void setPreco(float preco) {
+        this->preco = preco;
+    }
+
+    string getEndereco() {
+        return endereco;
+    }
+
+    float getPreco() {
+        return preco;
+    }
 };
 
 class Novo : public Imovel{
     private:
         float adicional;
     public:
-        void setAdicional(float novoAdicional){
-            this->adicional = novoAdicional;
+        void setAdicional(float adicional) {
+            this->adicional = adicional;
         }
-        float getAdicional(){
-            return this->adicional;
+
+        float getAdicional() {
+            return adicional;
         }
-        float getPreco(){
-            return this->getPreco() + this->adicional;
+
+        float getPrecoNovo() {
+            return this->getPreco() + adicional;
         }
-        void imprime(){
+        void imprimir() {
             cout << "Endereço: " << this->getEndereco() << endl;
-            cout << "Preço: R$" << setprecision(2) << fixed << this->getPreco() << endl;
+            cout << "Preço: R$" << this->getPrecoNovo() << endl;
         }
 };
 
@@ -48,33 +52,40 @@ class Velho : public Imovel{
     private:
         float desconto;
     public:
-        void setDesconto(float novoDesconto){
-            this->desconto = novoDesconto;
+        void setDesconto(float desconto) {
+            this->desconto = desconto;
         }
-        float getDesconto(){
-            return this->desconto;
+
+        float getDesconto() {
+            return desconto;
         }
-        float getPreco(){
-            return this->getPreco() - this->desconto;
+
+        float getPrecoVelho() {
+            return this->getPreco() - desconto;
         }
-        void imprime(){
-            cout << "Endereço: " << this->getEndereco() << endl;
-            cout << "Preço: R$" << setprecision(2) << fixed << this->getPreco() << endl;
+        void imprimir() {
+            cout << "Endereço: " << setprecision(2) << fixed << this->getEndereco() << endl;
+            cout << "Preço: R$" << setprecision(2) << fixed << this->getPrecoVelho() << endl;
         }
 };
 
-int main(){
+int main() {
     Novo novo;
-    novo.setEndereco("Rua Xurusbango");
-    novo.setAdicional(50);
-    novo.setPreco(100);
-    novo.imprime();
-
     Velho velho;
-    velho.setEndereco("Rua Xurusbago");
-    velho.setDesconto(50);
-    velho.setPreco(100);
-    velho.imprime();
+
+    novo.setEndereco("Rua Forgetson");
+    novo.setPreco(1000.00);
+    novo.setAdicional(100.00);
+
+    velho.setEndereco("Avenida Um");
+    velho.setPreco(1000.00);
+    velho.setDesconto(100.00);
+
+    novo.imprimir();
+    velho.imprimir();
 
     return 0;
+
+
+
 }
