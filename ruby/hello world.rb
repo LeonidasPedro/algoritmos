@@ -1,4 +1,2 @@
-def nha(a, b)
- puts a+b
-end
+puts ("Hello world!")
 
