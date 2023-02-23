@@ -1,0 +1,3 @@
+/home/leonidas/Documentos/algoritmos/C++/cmake-build-debug/CMakeFiles/C__.dir
+/home/leonidas/Documentos/algoritmos/C++/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/leonidas/Documentos/algoritmos/C++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
