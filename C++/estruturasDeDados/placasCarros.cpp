@@ -7,6 +7,7 @@ int main(){
     int placa;
     int placaForget;
     for (int i = 0; i < 7; i++){
+        cout << "Digite a placa do carro: nº " << i+1 << endl;
         cin >> placa;
         cars.push(placa);
     }
@@ -14,9 +15,10 @@ int main(){
     cin >> placaForget;
     for (int i = 0; i < 7; i++){
         if (placaForget == cars.top()) break;
-        cout << cars.top() << endl;
+        cout << "Saindo carro placa " <<  cars.top() << endl;
         cars.pop();
     }
+    cout << "Randandandandan" << endl;
 
     return 0;
 }

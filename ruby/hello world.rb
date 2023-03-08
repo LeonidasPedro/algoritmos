@@ -1,2 +1,2 @@
-sprintf ("Hello world!")
+puts "hello world"
 
