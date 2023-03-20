@@ -1,0 +1,96 @@
+@startuml
+class Gerente {
+  + cadastrarFabrica()
+  + cadastrarEmbalagem()
+  + consultarHistorico()
+  + cadastrarProdutoLiquido()
+}
+
+class Vendedor {
+  + fazerPedidoVenda()
+  + cadastrarFuncionario()
+  + mudarEquipe()
+}
+
+class Cliente {
+  - cnpj: string
+  + cadastrarCNPJ()
+}
+
+class Producao {
+  - controleVenda: SistemaControleVenda
+  - controleProducao: SistemaControleProducao
+}
+
+class Publicitario {
+  + criarCampanhaPublicitaria()
+}
+
+class Fábrica {
+  - id: int
+  - nome: string
+  - endereco: string
+  - dataFundacao: date
+  + produzirProdutoLiquido()
+}
+
+class Embalagem {
+  - id: int
+  - tipo: string
+}
+
+class ProdutoLiquido {
+  - id: int
+  - nome: string
+  - descricao: string
+  - preco: float
+  - volume: int
+}
+
+class PedidoVenda {
+  - id: int
+  - dataCriacao: date
+  - status: string
+}
+
+class Funcionario {
+  - id: int
+  - nome: string
+  - cargo: string
+  - salario: float
+}
+
+class EquipeVendas {
+  - id: int
+  - nome: string
+  - lider: Funcionario
+  + adicionarFuncionario()
+  + removerFuncionario()
+}
+
+class SistemaControleVenda {
+  + registrarPedidoVenda()
+}
+
+class SistemaControleProducao {
+  + registrarProducao()
+}
+
+Gerente -> Fábrica
+Gerente -> Embalagem
+Gerente -> ProdutoLiquido
+Vendedor -> PedidoVenda
+Vendedor -> Funcionario
+Vendedor -> EquipeVendas
+ClientePessoaJuridica -> PedidoVenda
+Producao -> SistemaControleVenda
+Producao -> SistemaControleProducao
+Publicitario -> CampanhaPublicitaria
+Fábrica -> ProdutoLiquido
+PedidoVenda -> ProdutoLiquido
+PedidoVenda -> ClientePessoaJuridica
+Funcionario -> EquipeVendas
+EquipeVendas -> Funcionario
+SistemaControleVenda -> PedidoVenda
+SistemaControleProducao -> Fábrica
+@enduml
