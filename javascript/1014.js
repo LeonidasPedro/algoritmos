@@ -10,7 +10,7 @@ int main() {
  
     return 0;
 }*/
-var input = require('fs').readFileSync('../dev/stdin', 'utf8');
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
 let km = Number(lines.shift());

@@ -21,7 +21,7 @@
 // Seu programa deve produzir uma única linha com nove inteiros representando os números de 
 // placas que devem ser contadas para garantir o cumprimento, respectivamente, de 10%, 20%, : : : , 90%
 //  da meta.
-var input = require('fs').readFileSync('../dev/stdin', 'utf8');
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
 let v = []
