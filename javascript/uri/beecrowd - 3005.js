@@ -24,15 +24,24 @@ var lines = input.split('\n');
 
 const getLineValues = (line) => line.split(" ").map(a => parseInt(a));
 
-let numeroLinhas = parseInt(lines.shift());
-let bloco1 = [];
-let bloco2 = [];
+let number = parseInt(lines.shift());
+let vetor = [];
 
-for (i = 0; i < numeroLinhas; i++){
-  if (i % 2 == 0){
-    bloco1.push(getLineValues(lines.shift()));
-  }
-  else {
-    bloco2.push(getLineValues(lines.shift()));
-  }
+for (i = 0; i < number; i++){
+    vetor.push(getLineValues(lines.shift()));
+    if (vetor[i][0] > vetor[i][3] && vetor[i][1] > vetor[i][4] || vetor[i][0] > vetor[i][4] && vetor[i][1] > vetor[i][3]){
+        console.log(1);
+    }
+    else if (vetor[i][3] > vetor[i][0] && vetor[i][4] > vetor[i][1] || vetor[i][3] > vetor[i][1] && vetor[i][4] > vetor[i][0]){
+        console.log(2);
+    }
+
+    else if (vetor[i][0] == vetor[i][3] && vetor[i][1] == vetor[i][4] || vetor[i][0] == vetor[i][4] && vetor[i][1] == vetor[i][3]){
+        console.log(3);
+    }
+    else {
+
+        console.log(0);
+    }
+
 }
