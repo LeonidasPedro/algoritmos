@@ -1,0 +1,70 @@
+@startuml
+
+class FuncionarioDEEC {
+    +informarNome()
+    +informarDescricao()
+    +visualizarCadastros()
+    +informarQuantidadeDeHoras()
+    +removerDemanda()
+    +importarPlanilha()
+    +validarEntrega()
+    +encaminharComprovanteDeEntrega()
+}
+
+class ResponsavelDemanda {
+    +gerarQRCode()
+    +cadastrarEntregaDeDemanda()
+}
+
+
+class Aluno {
+    -CPF: String
+    -nome: String
+    -curso: String
+    -projeto: String
+    -atividadeDesenvolvida: String
+    -programa: String
+    -tipo: String
+    -DDD: String
+    -telefoneCelular: String
+    -email: String
+    -concluiuHoras: boolean
+    -vinculacaoSetorBolsas: boolean
+    -declaracaoEnviada: boolean
+    +visualizarDemandas()
+    +selecionarDemanda()
+    +trocarDemanda()
+    +efetivarPresenca()
+    +efetivarEntrega()
+}
+
+class Demanda {
+    -nome: String
+    -descricao: String
+    -quantidadeDeHoras: int
+}
+
+class QRCode {
+}
+
+class DiarioDeBordo {
+}
+
+class ComprovanteDeEntrega {
+}
+
+FuncionarioDEEC "1" -- "0..*" Demanda: gerencia
+ResponsavelDemanda "1" -- "1" Demanda: responsavel
+Aluno "1" -- "0..*" Demanda: seleciona
+
+
+FuncionarioDEEC "1" -- "1" Aluno: valida
+
+ResponsavelDemanda "1" -- "1" QRCode: gera
+Aluno "1" -- "1" QRCode: lê
+
+Aluno "1" -- "1" DiarioDeBordo: entrega
+
+FuncionarioDEEC "1" -- "1" ComprovanteDeEntrega: encaminha
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+
+left to right direction
+
+actor FuncionarioDEEC
+actor ResponsavelDemanda
+actor Aluno
+
+
+rectangle "Catalogo de Demandas"{
+    FuncionarioDEEC -- (Informar nome)
+    FuncionarioDEEC -- (Informar descrição)
+    FuncionarioDEEC -- (Vizualizar cadastros)
+    FuncionarioDEEC -- (Informar quantidade de horas)
+    FuncionarioDEEC -- (Remover)
+    Aluno -- (Visualizar demandas)
+    Aluno -- (Selecionar demanda)
+    Aluno -- (Trocar demanda)
+    (Trocar demanda) .> (Selecionar demanda) : <<include>>
+
+}
+
+rectangle "Integracao dos Dados"{
+    FuncionarioDEEC -- (Selecionar planilha)
+    FuncionarioDEEC -- (Validar dados)
+    FuncionarioDEEC -- (Efetivar Integração)
+
+}
+
+
+rectangle "Gerenciamento de Entregas" {
+    ResponsavelDemanda -- (Gerar QR code)
+    Aluno -- (Ler QR code)
+    (Persiste Presença) .> (Ler QR code) : <<include>>
+    (Gerar QR code) .> (Ler QR code) : <<include>>
+    ResponsavelDemanda -- (Cadastra entrega de demanda)
+    Aluno -- (Efetiva entrega)
+    (Cadastra entrega de demanda) .> (Efetiva entrega) : <<include>>
+    Aluno -- (Entrega do diario de bordo)
+    FuncionarioDEEC -- (Valida entrega)
+    FuncionarioDEEC -- (Encaminha comprovante de entrega)
+    (Valida entrega) .> (Encaminha comprovante de entrega) : <<include>>
+
+}
+
+
+@enduml

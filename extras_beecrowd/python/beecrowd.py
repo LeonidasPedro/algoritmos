@@ -1,0 +1,1 @@
+## pegarValores - list(map(int,input().split(" ")))

@@ -1,0 +1,39 @@
+#include <unistd.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+void alarme(int sig){
+	printf("Sinal recebido alarme padrão %d.\n",sig);
+}
+void alarme6(int sig){
+	printf("Sinal recebido alarme6 %d.\n",sig);
+	sleep(5);
+	printf("funcao");
+}
+void alarme7(int sig){
+	printf("Sinal recebido alarme7 %d.\n",sig);
+}
+void alarme8(int sig){
+	printf("Sinal recebido alarme8 %d.\n",sig);
+}
+int main(){
+	printf("Alarme a ser enviado em 5s. PID %d\n",getpid());
+//	signal(SIGALARM, alarme);
+	signal(14, alarme);
+	signal(6, alarme6);
+	signal(7, alarme7);
+	signal(8, alarme8);
+	alarm(5);
+	printf("Alarm invocado\n");
+	for(;;){
+		sleep(1);
+		printf("\ttestando\n");
+	}
+}
+
+
+
+
+
+
+

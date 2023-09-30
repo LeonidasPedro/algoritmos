@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "dirent.h"
+#include "string.h"
+#include <ctype.h>
+int main(){
+	DIR *dir;
+	struct dirent *ent;
+	if((dir = opendir ("/proc/")) != NULL){
+		int valor;
+		while((ent = readdir(dir)) != NULL){
+			if (isdigit(ent->d_name[1])){
+				valor = atoi(ent->d_name);
+				if(valor > 3000)
+				//printf("%c%c;%s;\n", ent->d_name[0], ent->d_name[1], ent->d_name);
+				printf("%d\n", valor);
+			}
+		}
+	}
+}
