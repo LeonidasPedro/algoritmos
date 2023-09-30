@@ -1,0 +1,8 @@
+@startuml Carro
+class Carro
+
+Motorista - Carro : dirige >
+Carro *- Roda : Tem 4 >
+Carro -- Pessoa : < owns
+
+@enduml

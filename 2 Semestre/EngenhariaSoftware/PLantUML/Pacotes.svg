@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="261px" preserveAspectRatio="none" style="width:360px;height:261px;background:#000000;" version="1.1" viewBox="0 0 360 261" width="360px" zoomAndPan="magnify"><defs/><g><rect fill="#06120E" height="1" style="stroke:#06120E;stroke-width:1.0;" width="1" x="0" y="0"/><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="106" x="5" y="17">PlantUML 1.2022.6</text><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="3" x="5" y="33.3441"> </text><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="331" x="5" y="49.6882">&lt;b&gt;This version of PlantUML is 104 days old, so you should</text><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="346" x="5" y="66.0323">&lt;b&gt;consider upgrading from https://plantuml.com/download</text><rect fill="#33FF02" height="24.0679" style="stroke:#33FF02;stroke-width:1.0;" width="196" x="5" y="78.3765"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="194" x="6" y="93.3765">[From PLantUML (line 335) ]</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4" x="5" y="116.4444"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="5" y="135.5123">@startuml Pacotes</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="120" x="5" y="154.5802">package Cliente {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="21" y="173.6481">-Nome: String</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="81" x="21" y="192.716">-CPF: String</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="119" x="21" y="211.784">-Endereço: String</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" text-decoration="wavy underline" textLength="133" x="21" y="230.8519">+getNome(): String</text><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="93" x="9" y="249.9198">Syntax Error?</text><!--MD5=[47ce10431c4d7515539fbee95546cae2]
+@startuml Pacotes
+package Cliente {
+    -Nome: String
+    -CPF: String
+    -Endereço: String
+    +getNome(): String
+    +setNome(nome: String): void
+    +getCPF(): String
+    +setCPF(cpf: String): void
+    +getEndereço(): String
+    +setEndereço(endereço: String): void
+}
+package CaixaEletronico {
+    -Senha: String
+    -Saldo: Double
+    +getSenha(): String
+    +setSenha(senha: String): void
+    +getSaldo(): Double
+    +setSaldo(saldo: Double): void
+}
+@enduml
+
+PlantUML version 1.2022.6(Tue Jun 21 14:34:49 BRT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

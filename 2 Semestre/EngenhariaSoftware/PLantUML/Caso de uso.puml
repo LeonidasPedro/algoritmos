@@ -1,0 +1,10 @@
+@startuml CasoDeUso
+actor Cliente
+actor CaixaEletronico
+
+Cliente -> CaixaEletronico : Fornecer senha
+CaixaEletronico -> Cliente : Requisitar senha
+CaixaEletronico -> Cliente : Validar senha
+Cliente -> CaixaEletronico : Inserir cartão
+Cliente -> CaixaEletronico : Realizar saque
+@enduml
