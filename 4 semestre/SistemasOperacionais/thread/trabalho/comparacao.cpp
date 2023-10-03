@@ -113,7 +113,7 @@ int main(int argc, char *argv[]) {
 
 	sem_init(&semaforo, 0, 1);
     pthread_mutex_init(&mutex, NULL);
-    trava = sem_create(KEY, 1);
+    trava = sem_create(KEY, 1); 
     clock_t t1, t2;
 
 
