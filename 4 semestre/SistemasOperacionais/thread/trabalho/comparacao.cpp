@@ -9,13 +9,12 @@
 #include <iostream>
 
 #define KEY 1235
-
-
-#define THREADS 40 //numero de threads
+#define THREADS 40 
 
 long compartilhada = 0;
 sem_t semaforo; 
 pthread_mutex_t mutex;
+int trava;
 
 void P(int semid){
 	struct sembuf sempar[1];
@@ -70,6 +69,8 @@ void *threadSemaforo(void *arg)
 
 		sem_post(&semaforo); 
     }
+
+    return NULL;
 }
 
 
@@ -85,20 +86,25 @@ void *threadMutex(void *arg)
 
         pthread_mutex_unlock(&mutex); 
     }
+
+
+    return NULL;
 }
 
 void *treadDijkastra(void *arg)
 {
     int a, b;
     for (long j = 0; j < 100000; j++) {	
-        P(0);
+        P(trava);
         
         a = compartilhada;
         b = 1; 
         compartilhada = a + b;
 
-        V(0); 
+        V(trava); 
     }
+
+    return NULL;
 }
 
 int main(int argc, char *argv[]) {
@@ -150,5 +156,10 @@ int main(int argc, char *argv[]) {
     t2 = clock();
     printf("Valor final: %ld\n", compartilhada);
     printf("Tempo de execução da Dijkastra: %lf\n", (double)(t2 - t1) / CLOCKS_PER_SEC);
-
+    
+    sem_delete(0);
+    pthread_mutex_destroy(&mutex);
+    sem_destroy(&semaforo);
+    
+    return 0;
 }
