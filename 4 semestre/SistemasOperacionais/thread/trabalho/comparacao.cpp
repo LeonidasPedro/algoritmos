@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
     printf("Valor final: %ld\n", compartilhada);
     printf("Tempo de execução da Dijkastra: %lf\n", (double)(t2 - t1) / CLOCKS_PER_SEC);
     
-    sem_delete(0);
+    sem_delete(trava);
     pthread_mutex_destroy(&mutex);
     sem_destroy(&semaforo);
     
