@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 #include <pthread.h>
 #include <semaphore.h>
-#define KEY 1235
 
 sem_t semaforo;
 

@@ -163,3 +163,24 @@ int main(int argc, char *argv[]) {
     
     return 0;
 }
+
+
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    
+    Semáforos (Semaforo): Neste método, semáforos são usados para controlar o acesso à variável compartilhada, permitindo que uma única thread 
+    entre na seção crítica por vez. Isso evita condições de corrida, mas pode ter um desempenho inferior em cenários de muitas threads competindo
+    pelo acesso.
+
+    Mutex (threadMutex): Aqui, mutex (mutex pthread) é empregado para garantir a exclusão mútua na seção crítica. Threads bloqueiam e 
+    desbloqueiam o mutex, assegurando que apenas uma thread acesse a seção crítica de cada vez. Isso proporciona segurança, mas pode ter
+    um custo de desempenho ligeiramente maior.
+
+    Algoritmo de Dijkstra (treadDijkastra): Este método usa funções personalizadas P e V para criar uma semântica semelhante a semáforos. 
+    No entanto, envolve chamadas de sistema e é menos eficiente do que semáforos ou mutex diretos.
+
+Comparação:
+
+    Semáforos são adequados para cenários com múltiplas threads competindo pelo acesso simultâneo à seção crítica.
+    Mutex é preferível quando apenas uma thread deve acessar a seção crítica de cada vez.
+    O algoritmo de Dijkstra oferece controle semelhante a semáforos, mas é menos eficiente e mais complexo devido às chamadas de sistema 
+    envolvidas
